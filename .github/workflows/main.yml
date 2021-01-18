@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: create repository dispatch event and run
 #         if: env.REPOSITORY_DESPATCH == 'true'
-        shell: pwsh
+#         shell: pwsh
         run: |
           $token = $env:ACCESS_TOKEN
           curl \
