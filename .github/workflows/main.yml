@@ -19,7 +19,7 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.REPO_WORKFLOW_ACCESS_TOKEN }}
     steps:
       - name: create repository dispatch event and run
-        if: env.REPOSITORY_DESPATCH == 'true'
+#         if: env.REPOSITORY_DESPATCH == 'true'
         shell: pwsh
         run: |
           $token = $env:ACCESS_TOKEN
