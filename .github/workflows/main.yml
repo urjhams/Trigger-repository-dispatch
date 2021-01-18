@@ -25,7 +25,8 @@ jobs:
           $token = $env:ACCESS_TOKEN
           curl \
           -X POST \
-          -H "Accept: application/vnd.github.v3+json" \-H "Authorization: token $token"
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token $token"
           https://api.github.com/repos/urjhams/json-upload/dispatches \
           -d '{"event_type":"upload-the-json"}'
           
