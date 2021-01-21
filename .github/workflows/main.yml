@@ -16,7 +16,21 @@ jobs:
     name: add file
     runs-on: macos-latest
     steps:
+      # check out the repository
+      - name: check out
+        uses: actions/checkout@v2
+        
+      # filter to detect different in files
+      - name: filter
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            json:
+              - '.github/workflows/main.ynl'
+      
       - name: update file and push to remote
+        if: steps.filter.outputs.json == 'true'
         run: |
           echo "Test push commit to the remote in the workflow" >> test.txt
           git config --global user.name "github-actions[bot]"
