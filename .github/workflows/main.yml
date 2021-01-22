@@ -52,5 +52,5 @@ jobs:
           -H "Accept: application/vnd.github.v3+json" \
           -H "Authorization: token $ACCESS_TOKEN" \
           https://api.github.com/repos/urjhams/json-upload/dispatches \
-          -d '{"event_type":"upload-the-json", "client_payload": { "value":"tester" }}'
+          -d '{"event_type":"upload-the-json", "client_payload": { "value":"tested" }}'
           
