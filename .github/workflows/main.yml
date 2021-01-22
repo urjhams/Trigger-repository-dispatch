@@ -34,7 +34,8 @@ jobs:
         run: |
           mkdir -p ./TestFolder
           mv ./Test3.txt ./TestFolder
-
+          
+          git add -A
           git commit -m "moving test.txt"
           git push
 #   triggerWorlflow:
