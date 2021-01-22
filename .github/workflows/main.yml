@@ -33,9 +33,8 @@ jobs:
         if: steps.filter.outputs.targetFolder == 'true'
         run: |
           mkdir -p ./TestFolder
-          mv ./Test2.txt ./TestFolder
+          mv ./Test3.txt ./TestFolder
 
-          git add -A
           git commit -m "moving test.txt"
           git push
 #   triggerWorlflow:
