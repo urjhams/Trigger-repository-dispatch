@@ -33,7 +33,7 @@ jobs:
         if: steps.filter.outputs.targetFolder == 'true'
         run: |
           mkdir -p ./TestFolder
-          mv ./Test.txt ./TestFolder
+          mv ./Test2.txt ./TestFolder
 
           git add -A
           git commit -m "moving test.txt"
