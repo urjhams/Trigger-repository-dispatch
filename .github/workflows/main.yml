@@ -32,7 +32,8 @@ jobs:
       - name: update file and push to remote
         if: steps.filter.outputs.targetFolder == 'true'
         run: |
-          mv ./Test.txt ./Test
+          mkdir -p ./TestFolder
+          mv ./Test.txt ./TestFolder
 
           git add -A
           git commit -m "moving test.txt"
