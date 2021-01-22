@@ -32,11 +32,10 @@ jobs:
       - name: update file and push to remote
         if: steps.filter.outputs.targetFolder == 'true'
         run: |
-          echo "Test push commit to the remote in the workflow" >> test.txt
-          mv ./test.txt ./Test
+          mv ./Test.txt ./Test
 
           git add -A
-          git commit -m "Update test.txt"
+          git commit -m "moving test.txt"
           git push
 #   triggerWorlflow:
 #     name: Trigger another action worflow
