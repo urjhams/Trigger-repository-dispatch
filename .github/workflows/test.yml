@@ -30,7 +30,7 @@ jobs:
           echo "::set-output name=hasTag::0" || \
           echo "::set-output name=hasTag::1"
           
-        - run: echo "${{ teps.tagged.ouput.hasTag }}"
+      - run: echo "${{ teps.tagged.ouput.hasTag }}"
         
 #       - name: has tag case
 #         if: steps.tagged.ouput.hasTag == 0
