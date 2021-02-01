@@ -22,6 +22,7 @@ jobs:
       # If there is a git tag for the version set the variable 'tagged' to 0
       # if there is NOT a git tag for the version set the variable 'tagged' to 1
       - name: 'Check: package version has corrosponding git tag'
+        if: ${{ always() }} # force run even if there is no tag (which mean the previous step failed)
         id: tagged
         shell: bash
         run: |
