@@ -24,7 +24,6 @@ jobs:
       - name: 'Check: package version has corrosponding git tag'
         if: ${{ always() }} # force run even if there is no tag (which mean the previous step failed)
         id: tagged
-        shell: bash
         run: |
           git show-ref --tags --verify --quiet -- \
           "refs/tags/v${{ steps.package.outputs.version }}" && \
@@ -32,7 +31,7 @@ jobs:
           echo "::set-output name=hasTag::1"
         
       - name: has tag case
-        if: steps.tagged.ouput.hasTag != 1
+        if: steps.tagged.ouput.hasTag == 0
         run: echo "has tag"
         
       - name: has no tag case
