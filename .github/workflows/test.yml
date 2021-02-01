@@ -29,11 +29,13 @@ jobs:
           "refs/tags/v${{ steps.package.outputs.version }}" && \
           echo "::set-output name=hasTag::0" || \
           echo "::set-output name=hasTag::1"
+          
+        - run: echo "${{ teps.tagged.ouput.hasTag }}"
         
-      - name: has tag case
-        if: steps.tagged.ouput.hasTag == 0
-        run: echo "has tag"
+#       - name: has tag case
+#         if: steps.tagged.ouput.hasTag == 0
+#         run: echo "has tag"
         
-      - name: has no tag case
-        if: steps.tagged.output.hasTag == 1
-        run: echo "has no tags"
+#       - name: has no tag case
+#         if: steps.tagged.output.hasTag == 1
+#         run: echo "has no tags"
